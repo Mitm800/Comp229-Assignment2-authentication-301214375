@@ -1,0 +1,63 @@
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/Content/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <%- include('../components/header.ejs'); %>
+    </header>
+    <main class='container'>
+        <div class='row'>
+            <div class='offset-md-1 col-md-10'>
+                <h1>
+                    <%= title %>
+                </h1>
+                <a href="/contactList/add" class="btn btn-primary" role="button">
+                    <i class="fas fa-plus-circle"></i>Add a Contact</a>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let counter = 0; counter < contactList.length; counter++ ) { %>
+                            <tr>
+                                <td>
+                                    <%= contactList[counter].name %>
+                                </td>
+                                <td>
+                                    <%= contactList[counter].number %>
+                                </td>
+                                <td>
+                                    <%= contactList[counter].email %>
+                                </td>
+                                <td>
+                                    <a href="/contactList/edit/<%= contactList[counter]._id%>" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>Edit</a>
+                                </td>
+                                <td>
+                                    <a href="/contactList/delete/<%= contactList[counter]._id%>" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-pencil-alt"></i>Delete</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <header>
+        <%- include('../components/footer.ejs'); %>
+    </header>
+</body>

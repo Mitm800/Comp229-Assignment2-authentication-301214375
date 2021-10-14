@@ -1,0 +1,44 @@
+/*Mitkumar Malavia, 301214375, 05/10/2021*/
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+form {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%
+}
+
+.image {
+    flex-basis: 40%
+}
+
+.text {
+    font-size: 20px;
+    padding-left: 20px;
+}
