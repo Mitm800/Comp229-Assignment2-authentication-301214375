@@ -26,7 +26,7 @@ module.exports.processAddPage = (req, res, next) => {
         number: req.body.number,
         email: req.body.email
     });
-
+    console.log(newContact)
     Contact.create(newContact, (err, Contact) => {
             if (err) {
                 return console.err(err);
@@ -44,10 +44,10 @@ module.exports.displayEditPage = (req, res, next) => {
             console.log(err);
             res.render(err);
         } else {
+            console.log(contactToEdit)
             res.render('contact/edit', { title: 'Edit', contact: contactToEdit })
         }
     })
-
 }
 
 module.exports.processEditPage = (req, res, next) => {
@@ -57,6 +57,7 @@ module.exports.processEditPage = (req, res, next) => {
         "number": req.body.number,
         "email": req.body.email,
     })
+    console.log(updateContact)
     Contact.updateOne({ _id: id }, updateContact, (err) => {
         if (err) {
             console.log(err);

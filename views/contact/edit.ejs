@@ -17,7 +17,7 @@
                 <h1>
                     <%= title%>
                 </h1>
-                <form class='form' method="post" action="/edit">
+                <form class="form" method="post">
                     <div class="form-group">
                         <label for="nameTextField">Name</label>
                         <input type="text" class="form-control" id="nameTextField" value="<%= contact.name  %> " placeholder="Enter Name" name="name" required>
@@ -31,7 +31,7 @@
                         <input type="text" class="form-control" id="emailTextField" value="<%= contact.email  %> " placeholder="Enter E-mail" required>
                     </div>
 
-                    <buttton class='btn btn-primary' type='submit'>
+                    <buttton class='btn btn-primary' type="submit">
                         <i class="fas fa-edit">Submit</i>
                     </buttton>
 
