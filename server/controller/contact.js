@@ -31,7 +31,7 @@ module.exports.processAddPage = (req, res, next) => {
             if (err) {
                 return console.err(err);
             } else {
-                res.redirect('contact/contactList')
+                res.redirect('/contactList')
             }
         })
         //res.render('contact/contactList', { title: 'Add' })
@@ -51,6 +51,7 @@ module.exports.displayEditPage = (req, res, next) => {
 }
 
 module.exports.processEditPage = (req, res, next) => {
+    let id = req.params.id;
     let updateContact = Contact({
         "_id": id,
         "name": req.body.name,
@@ -63,7 +64,7 @@ module.exports.processEditPage = (req, res, next) => {
             console.log(err);
             res.render(err);
         } else {
-            res.redirect('contact/contactList')
+            res.redirect('/contactList')
         }
     });
 }
