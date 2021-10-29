@@ -1,9 +1,12 @@
+/*Mitkumar Malavia, 301214375, 29/10/2021*/
 let express = require('express');
 let router = express.Router();
 
 let mongoose = require('mongoose');
 
 let Contact = require('../models/contacts');
+
+//modules for CRUD operations of Contact page
 
 module.exports.displayContactList = (req, res, next) => {
     Contact.find((err, contactList) => {
@@ -31,13 +34,13 @@ module.exports.processAddPage = (req, res, next) => {
     });
     console.log(newContact)
     Contact.create(newContact, (err, Contact) => {
-            if (err) {
-                return console.err(err);
-            } else {
-                res.redirect('/contactList')
-            }
-        })
-        //res.render('contact/contactList', { title: 'Add' })
+        if (err) {
+            return console.err(err);
+        } else {
+            res.redirect('/contactList')
+        }
+    })
+
 }
 
 module.exports.displayEditPage = (req, res, next) => {

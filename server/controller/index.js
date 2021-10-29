@@ -1,3 +1,4 @@
+/*Mitkumar Malavia, 301214375, 29/10/2021*/
 let express = require('express');
 let router = express.Router();
 
@@ -9,7 +10,7 @@ let DB = require('../config/db');
 let userModel = require('../models');
 let User = userModel.User;
 
-
+//modules for login, register and other tabs
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', { title: 'Home', fileName: 'home', displayName: req.user ? req.user.displayName : '' });
 }

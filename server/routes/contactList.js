@@ -1,3 +1,4 @@
+/*Mitkumar Malavia, 301214375, 29/10/2021*/
 let express = require('express');
 let router = express.Router();
 
@@ -6,6 +7,8 @@ let mongoose = require('mongoose');
 let Contact = require('../models/contacts');
 
 let contactController = require('../controller/contact')
+
+//route file for contact CRUD operations
 
 router.get('/', contactController.displayContactList);
 
