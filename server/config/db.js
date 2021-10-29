@@ -1,3 +1,3 @@
 module.exports = {
-    "URI": "mongodb://localhost:27017/comp229assg2"
+    "URI": "mongodb+srv://mitkumar:q6VOwFqXQbSmyrJj@cluster0.3dy3k.mongodb.net/comp229assg2?retryWrites=true&w=majority"
 }
