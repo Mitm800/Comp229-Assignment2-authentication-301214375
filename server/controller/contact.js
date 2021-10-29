@@ -3,7 +3,7 @@ let router = express.Router();
 
 let mongoose = require('mongoose');
 
-let Contact = require('../config/models/contacts');
+let Contact = require('../models/contacts');
 
 module.exports.displayContactList = (req, res, next) => {
     Contact.find((err, contactList) => {
@@ -11,13 +11,16 @@ module.exports.displayContactList = (req, res, next) => {
             return console.err(err);
         } else {
             console.log(contactList)
-            res.render('contact/contactList', { title: 'Contact List', contactList: contactList })
+            res.render('contact/contactList', { title: 'Contact List', contactList: contactList, displayName: req.user ? req.user.displayName : '' })
         }
     })
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contact/add', { title: 'Add Data' });
+    res.render('contact/add', {
+        title: 'Add Data',
+        displayName: req.user ? req.user.displayName : ''
+    });
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -45,7 +48,11 @@ module.exports.displayEditPage = (req, res, next) => {
             res.render(err);
         } else {
             console.log(contactToEdit)
-            res.render('contact/edit', { title: 'Edit', contact: contactToEdit })
+            res.render('contact/edit', {
+                title: 'Edit',
+                contact: contactToEdit,
+                displayName: req.user ? req.user.displayName : ''
+            })
         }
     })
 }

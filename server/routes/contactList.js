@@ -3,7 +3,7 @@ let router = express.Router();
 
 let mongoose = require('mongoose');
 
-let Contact = require('../config/models/contacts');
+let Contact = require('../models/contacts');
 
 let contactController = require('../controller/contact')
 
