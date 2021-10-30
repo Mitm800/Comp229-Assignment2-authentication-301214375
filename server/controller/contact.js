@@ -16,7 +16,7 @@ module.exports.displayContactList = (req, res, next) => {
             console.log(contactList)
             res.render('contact/contactList', { title: 'Contact List', contactList: contactList, displayName: req.user ? req.user.displayName : '' })
         }
-    })
+    }).sort({ "name": 1 })
 }
 
 module.exports.displayAddPage = (req, res, next) => {
